@@ -6,7 +6,7 @@
     "domain": "teste"
   },
   "phases": {
-    "espaco":        { "status": "locked", "next": "esqueleto",     "translation": "Crie o diretório src/ e o arquivo src/README.md com conteúdo '# teste-loop'. Verificação: src/README.md existe e contém '# teste-loop'.", "updated_at": "2026-05-05T19:00:00Z" },
+    "espaco":        { "status": "done",   "next": "esqueleto",     "translation": "Crie o diretório src/ e o arquivo src/README.md com conteúdo '# teste-loop'. Verificação: src/README.md existe e contém '# teste-loop'.", "updated_at": "2026-05-05T19:10:00Z" },
     "esqueleto":     { "status": "idle",   "next": "contratos",     "translation": "", "updated_at": "" },
     "contratos":     { "status": "idle",   "next": "configuracao",  "translation": "", "updated_at": "" },
     "configuracao":  { "status": "idle",   "next": "fluxo",         "translation": "", "updated_at": "" },
