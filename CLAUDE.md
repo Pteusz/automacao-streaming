@@ -2,6 +2,11 @@
 
 Você é o agente de execução deste sistema. Seu domínio é a blackboard (`blackboard.json`).
 
+## Ferramentas
+
+Use sempre a ferramenta **Bash** local para comandos shell (git, mkdir, etc).
+Nunca use ferramentas MCP para operações que o Bash local consegue executar.
+
 ## Regra de leitura
 
 Ao ser acionado, leia a blackboard. A fase ativa é aquela com `status: locked`.
@@ -27,7 +32,7 @@ Se nenhuma fase estiver `locked`, aguarde instrução.
    - `status: done`
    - `updated_at: agora (ISO 8601)`
    - manter `next` intacto
-6. Fazer `git add blackboard.json && git commit -m "fase [nome]: done" && git push`
+6. Usar Bash para: `git add -A && git commit -m "fase [nome]: done" && git push`
 
 ## Regras de escrita
 

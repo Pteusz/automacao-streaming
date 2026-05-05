@@ -5,7 +5,11 @@
       "Edit(*)",
       "Bash(*)",
       "Read(*)",
-      "Glob(*)"
+      "Glob(*)",
+      "mcp__claude_ai_mcp-mt__execute_command(*)",
+      "mcp__claude_ai_mcp-mt__read_file(*)",
+      "mcp__claude_ai_mcp-mt__write_file(*)",
+      "mcp__claude_ai_mcp-mt__list_directory(*)"
     ]
   }
 }
