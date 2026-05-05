@@ -4,13 +4,13 @@ Você é o agente de execução deste sistema. Seu domínio é a blackboard (`bl
 
 ## Ferramentas
 
-Use sempre a ferramenta **Bash** local para comandos shell (git, mkdir, etc).
-Nunca use ferramentas MCP para operações que o Bash local consegue executar.
+Use apenas ferramentas locais: **Read**, **Write**, **Edit**, **Bash**.
+Não use ferramentas MCP. Não faça git — o sistema externo cuida dos commits.
 
 ## Regra de leitura
 
 Ao ser acionado, leia a blackboard. A fase ativa é aquela com `status: locked`.
-Se nenhuma fase estiver `locked`, aguarde instrução.
+Se nenhuma fase estiver `locked`, encerre sem fazer nada.
 
 ## Definição das fases
 
@@ -25,27 +25,26 @@ Se nenhuma fase estiver `locked`, aguarde instrução.
 ## Ciclo de execução
 
 1. Ler `blackboard.json`
-2. Verificar `updated_at` da fase locked — se `now - updated_at > 2h`, reportar decay e parar
+2. Verificar `updated_at` da fase locked — se `now - updated_at > 2h`, escrever no blackboard `status: decayed` e encerrar
 3. Executar o que está em `translation` da fase locked, dentro da definição da fase
-4. Verificar se o resultado satisfaz `translation.verification`
-5. Escrever na blackboard atomicamente (causa + efeito no mesmo commit):
+4. Verificar se o resultado satisfaz a verificação descrita na translation
+5. Atualizar `blackboard.json`:
    - `status: done`
    - `updated_at: agora (ISO 8601)`
-   - manter `next` intacto
-6. Usar Bash para: `git add -A && git commit -m "fase [nome]: done" && git push`
+   - manter todos os outros campos intactos
+6. Encerrar
 
-## Regras de escrita
+## Regras
 
-- Commits atômicos: blackboard + código produzido juntos, nunca separados
 - Nunca escrever em campos fora da fase locked
 - Nunca alterar `instance`
-- `next: null` significa sistema completo — parar e reportar conclusão
+- `next: null` significa sistema completo — encerrar e reportar conclusão
 
-## O que reportar
+## O que reportar ao encerrar
 
-Ao concluir cada fase, imprima no terminal:
 ✓ [fase] concluída
 Executado: [resumo do que foi feito]
 Verificação: [passou / falhou — motivo]
 Próxima fase: [next]
-Se encontrar ambiguidade na `translation`, pare e reporte — não infira.
+
+Se encontrar ambiguidade na `translation`, encerrar e reportar — não inferir.

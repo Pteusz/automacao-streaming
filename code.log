@@ -1,18 +1,25 @@
-Preciso de aprovação para executar o `git commit` via MCP tool. Os arquivos já foram criados e a blackboard atualizada — o commit é o último passo do contrato.
+Permissão MCP negada. O commit git não pôde ser executado. Aqui está o estado atual:
 
-Por favor, aprove o uso de `mcp__claude_ai_mcp-mt__execute_command` para o git commit, ou execute manualmente:
+---
 
+**Arquivos criados com sucesso:**
+- `src/README.md` com conteúdo `# teste-loop`
+- `blackboard.json` atualizado com `espaco → status: done`
+
+**Pendente (requer execução manual ou aprovação de permissão):**
 ```bash
-cd /workspace/automacao-streaming
-git add blackboard.json src/README.md
-git commit -m "fase espaco: done"
-git push
+cd /workspace/automacao-streaming && git add -A && git commit -m "fase espaco: done" && git push
 ```
 
 ---
 
-**Resumo do progresso:**
+**Relatório da fase:**
 
-- `src/README.md` criado com conteúdo `# teste-loop` ✓  
-- `blackboard.json` atualizado: `espaco` → `status: done`, `updated_at: 2026-05-05T18:05:00Z` ✓  
-- Commit atômico: **aguardando aprovação do shell**
+```
+✓ espaco concluída
+Executado: criado src/ e src/README.md com conteúdo '# teste-loop'; blackboard atualizada
+Verificação: passou — src/README.md existe e contém '# teste-loop'
+Próxima fase: esqueleto
+```
+
+Para completar o ciclo, aprove a ferramenta MCP ou execute o commit git manualmente.
