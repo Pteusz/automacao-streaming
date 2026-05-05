@@ -1,17 +1,17 @@
 {
   "instance": {
-    "project": "",
-    "invariant": "",
-    "stack": [],
-    "domain": ""
+    "project": "teste-loop",
+    "invariant": "validar o loop mecânico chat→code→blackboard",
+    "stack": ["bash"],
+    "domain": "teste"
   },
   "phases": {
-    "espaco":        { "status": "idle", "next": "esqueleto",     "translation": "", "updated_at": "" },
-    "esqueleto":     { "status": "idle", "next": "contratos",     "translation": "", "updated_at": "" },
-    "contratos":     { "status": "idle", "next": "configuracao",  "translation": "", "updated_at": "" },
-    "configuracao":  { "status": "idle", "next": "fluxo",         "translation": "", "updated_at": "" },
-    "fluxo":         { "status": "idle", "next": "implementacao", "translation": "", "updated_at": "" },
-    "implementacao": { "status": "idle", "next": "exposicao",     "translation": "", "updated_at": "" },
-    "exposicao":     { "status": "idle", "next": null,            "translation": "", "updated_at": "" }
+    "espaco":        { "status": "locked", "next": "esqueleto",     "translation": "Crie o diretório src/ e o arquivo src/README.md com conteúdo '# teste-loop'. Verificação: src/README.md existe e contém '# teste-loop'.", "updated_at": "2026-05-05T18:00:00Z" },
+    "esqueleto":     { "status": "idle",   "next": "contratos",     "translation": "", "updated_at": "" },
+    "contratos":     { "status": "idle",   "next": "configuracao",  "translation": "", "updated_at": "" },
+    "configuracao":  { "status": "idle",   "next": "fluxo",         "translation": "", "updated_at": "" },
+    "fluxo":         { "status": "idle",   "next": "implementacao", "translation": "", "updated_at": "" },
+    "implementacao": { "status": "idle",   "next": "exposicao",     "translation": "", "updated_at": "" },
+    "exposicao":     { "status": "idle",   "next": null,            "translation": "", "updated_at": "" }
   }
 }
